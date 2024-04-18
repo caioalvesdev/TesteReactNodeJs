@@ -1,10 +1,14 @@
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import { requestBodySchema } from './schemas/request.schema';
+import { operations } from './operations';
+import cors from 'cors'
+
 
 const app = express();
 
-import { operations } from './operations';
+app.use(cors())
+
 
 app.use(bodyParser.json());
 
